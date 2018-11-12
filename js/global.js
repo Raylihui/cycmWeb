@@ -201,10 +201,8 @@
         // $('.caption-text').css('visibility', 'visible').addClass('fadeInUp');
         // $('.caption-button').css('visibility', 'visible').addClass('fadeInUp');
         // $('.section-Help-image').css('visibility', 'visible').addClass('fadeInLeft');
-        $('.digle').css('visibility', 'visible').addClass('fadeInLeft');
-        $('.factory2').css('visibility', 'visible').addClass('fadeInLeft');
-        $('.DZ').css('visibility', 'visible').addClass('fadeInLeft');
-        $('.WX').css('visibility', 'visible').addClass('fadeInLeft');
+		// let size = document.body.clientWidth / 750 * 12;
+		// document.getElementsByTagName("html")[0].style.fontSize = size + "px";
     });
 
     // Config Animsition
@@ -264,21 +262,20 @@
         }, options );
 
         $(this).on('click', function (e) {
-
             var href = $(this).attr("href");
-
-            $("body").append('<div class="YouTubePopUp-Wrap YouTubePopUp-animation"><div class="YouTubePopUp-Content"><span class="YouTubePopUp-Close"></span><iframe src="'+href+'" allowfullscreen></iframe></div></div>');
+			//动态得到对应的视频路径
+			var videoURL = $(this).attr("videoURL");
+            $("body").append('<div class="YouTubePopUp-Wrap YouTubePopUp-animation"><div class="YouTubePopUp-Content"><span class="YouTubePopUp-Close"></span><iframe src="'+href+'?url='+videoURL+'" allowfullscreen></iframe></div></div>');
 
             if( $('.YouTubePopUp-Wrap').hasClass('YouTubePopUp-animation') ){
                 setTimeout(function() {
                     $('.YouTubePopUp-Wrap').removeClass("YouTubePopUp-animation");
                 }, 600);
             }
-
             $(".YouTubePopUp-Wrap, .YouTubePopUp-Close").click(function(){
                 $(".YouTubePopUp-Wrap").addClass("YouTubePopUp-Hide").delay(515).queue(function() { $(this).remove(); });
             });
-
+			
             e.preventDefault();
 
         });

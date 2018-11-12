@@ -49,7 +49,7 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
 body {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 12px;
   line-height: -webkit-calc(30 / 18);
   line-height: -moz-calc(30 / 18);
   line-height: calc(30 / 18);
@@ -129,6 +129,9 @@ a {
 	color: #cbcbcb;
 	text-decoration: none;
 }
+html{
+	font-size: 12px;
+}
 /* 背景 */
 .bg-color{
 	background: #FFFFFF;
@@ -142,13 +145,21 @@ a {
 	margin: auto;
 	border: 1px solid #DDDDDD;
 }
-/* 中间内容 */
+/* 中间内容区域 */
 .center-content{
-	width: 66% !important;
+	width: 62% !important;
+	margin: 0 auto;
 }
 .text-left{
 	text-align: left;
 }
+.text-right{
+	text-align: right;
+}
+.text-center{
+	text-align: center;
+}
+/*  */
 /*! Typography -- Helpers */
 .type--fade {
   opacity: .5;
@@ -3521,7 +3532,7 @@ ul.list-reset {
   width: 0;
   height: 2px;
   /* background: #fff; */
-  background: #23aee6;
+  background: #d0923b;
   display: block;
   position: absolute;
   bottom: 0;
